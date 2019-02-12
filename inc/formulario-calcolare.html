@@ -1,0 +1,106 @@
+<div class="col-xs-12 rowMargin">
+    <label>Dimensione della casa: </label>
+</div>
+
+<div class="col-xs-12">
+    <div class="form-inline">
+      <div class="input-group">
+        <input type="number" class="form-control" name="consumo" min="0" max="400" placeholder="75" ng-model="dimensioneCasa" ng-blur="input1($event)" required>
+        <span class="input-group-addon addonA">mq</span>
+      </div>
+    </div>
+</div>
+
+
+<div  class="col-xs-12 rowMargin">
+  <label>Quante persone vivono nella casa?</label>
+</div>
+
+<div  class="col-xs-12 personeCasa">
+
+  <div class="btn-group">
+      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[0].valore">{{personeCasa[0].nome}}
+        <span ng-if="personeSelected==personeCasa[0].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+      </label>
+      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[1].valore">{{personeCasa[1].nome}}
+      <span ng-if="personeSelected==personeCasa[1].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+      </label>
+      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[2].valore">{{personeCasa[2].nome}}
+        <span ng-if="personeSelected==personeCasa[2].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+      </label>
+      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[3].valore">{{personeCasa[3].nome}}
+        <span ng-if="personeSelected==personeCasa[3].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+      </label>
+      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[4].valore">{{personeCasa[4].nome}}
+      <span ng-if="personeSelected==personeCasa[4].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+      </label>
+  </div>
+
+</div>
+
+
+<div  class="col-xs-12 rowMargin">
+    <label>Per cosa utilizzi?</label>
+</div>
+
+
+<div class="col-xs-12">
+    <div class="col-xs-6 addonD">
+        <button class="btn btn-sharp colorArancia" id="addonC" ng-model="elettrodomestici[0].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[0]})">{{elettrodomestici[0].nome}}
+            <span ng-if="elettrodomestici[0].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+
+    <div class="col-xs-6 addonD">
+      <button class="btn btn-sharp colorArancia" id="addonC" ng-model="elettrodomestici[1].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[1]})">{{elettrodomestici[1].nome}}
+          <span ng-if="elettrodomestici[1].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+
+    <div class="col-xs-6 addonD">
+        <button class="btn btn-sharp colorArancia" id="addonC" ng-model="elettrodomestici[2].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[2]})">{{elettrodomestici[2].nome}}
+            <span ng-if="elettrodomestici[2].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+
+    <div class="col-xs-6 addonD">
+      <button class="btn btn-sharp colorArancia" id="addonC" ng-model="elettrodomestici[3].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[3]})">{{elettrodomestici[3].nome}}
+          <span ng-if="elettrodomestici[3].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+
+    <div class="col-xs-6 addonD">
+        <button class="btn btn-sharp colorArancia" id="addonC" ng-model="elettrodomestici[4].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[4]})">{{elettrodomestici[4].nome}}
+            <span ng-if="elettrodomestici[4].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+
+    <div class="col-xs-6 addonD">
+      <button class="btn btn-sharp colorArancia" id="addonC" ng-model="elettrodomestici[5].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[5]})">{{elettrodomestici[5].nome}}
+          <span ng-if="elettrodomestici[5].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+
+</div>
+
+
+<div class="col-xs-12">
+    <label class="rowMargin">Potenza</label>
+</div>
+
+<div class="col-xs-12 personeCasa">
+
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[0].valore">{{potenza[0].nome}}
+      <span ng-if="potenzaSelected==potenza[0].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[1].valore">{{potenza[1].nome}}
+      <span ng-if="potenzaSelected==potenza[1].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[2].valore">{{potenza[2].nome}}
+      <span ng-if="potenzaSelected==potenza[2].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[3].valore">{{potenza[3].nome}}
+      <span ng-if="potenzaSelected==potenza[3].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+
+</div>

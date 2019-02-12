@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="alert alert-warning" role="alert" ng-show="mensaggioDB != '' ">
+        {{mensaggioDB}}
+    </div>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6">
+
+    <div class="input-group">
+      <span class="input-group-btn">
+        <a class="btn btn-info" type="button" ng-click="aggiunge()">Aggiunge Azienda</a>
+      </span>
+      <input class="form-control" type="text" ng-model="ricerca2.nome" placeholder="Busca Azienda">
+    </div><!-- /input-group -->
+
+  </div>
+
+  <div class="col-sm-6">
+    <a class="btn btn-default" role="button" ng-click="editImposte()">Imposte</a>
+  </div>
+
+
+</div>        
+
+<div class="row upperSpace2">
+
+    <table class="table table-striped table-condensed table-bordered table-hover" id="tbfornitorigas">
+        <thead>
+          <tr>
+            <th> Data </th>
+            <th> Nome </th>
+            <th> Prodotto </th>
+            <th> Prezzo</th>
+            <th> Prezzo Materia</th>
+            <th> Transporto </th>
+            <th> Stoccaggio </th>
+            <th id="tbcenter"> Aggiorna </th>
+            <th id="tbcenter"> Cancela </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="azienda in todos | filter: ricerca2"> 
+            <td>{{azienda.dataIni}}</td>
+            <td>{{azienda.nome}}</td>
+            <td>{{azienda.prodotto}}</td>
+            <td>{{azienda.prezzo}}</td>
+            <td>
+                  <span ng-repeat="(reg,prezzo) in azienda.prezzoMateria track by $index">
+                      "<span id="regioneDestaco"> {{reg + 1}}</span> : {{prezzo}} ", <br ng-if="((reg+1)%3) == 0"/>
+                  </span>
+            </td>
+            <td>{{azienda.transporto}}</td>
+            <td>{{azienda.stoccaggio}}</td>
+            <td id="tbcenter"><a ng-click="aggiorna(azienda)" class="btn btn-info">Aggiorna</a></td>
+            <td><div button-cancela button="cancela(azienda)" nome="Cancela"></div></td>
+          </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="row upperSpace2">
+    <label >Numeri Per Pagina</label>
+    <select ng-model="numeriPerPage">
+      <option value="30" selected>20</option>
+      <option value="40">40</option>
+      <option value="50">80</option>
+    </select>
+
+    <a ng-click="mudaPagina(-1)">indietro</a> !{{page+1}}! <a ng-click="mudaPagina(1)">Avante</a>
+
+</div>

@@ -1,0 +1,161 @@
+/* --------- design -------*/
+
+.formComparatore,
+.formComparatoreLuce,
+.formComparatoreGas {
+	position: relative;
+	margin-left: -33%;
+	width: 1970px;
+	height: 550px;
+	background-image: url("../img/home-top.png");
+}
+
+.formComparatoreLuce {
+  background-image: url("../img/sfondo-luce.png");
+}
+
+.formComparatoreGas {
+  background-image: url("../img/sfondo-gas.png");
+}
+
+.spazioMenuIniziale {
+  width:100%;
+  height: 60px;;
+}
+
+.formContainer {
+	position: relative;
+	left: 20px;
+	margin-top: -535px;
+	height: 550px;
+}
+
+.formSfondo {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.marginMenu {
+	margin-top: 1em;
+}
+
+.marginMenu2 {
+	margin-top: 2em;
+}
+
+.marginMenuPersonale {
+	margin-top: 3em;
+}
+
+.menuPath h3,
+.marginMenu h3,
+.marginMenu2 h3 {
+	margin-top: 0.7em;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.menuPath {
+	position: absolute;
+	bottom: 5px;
+	width: 100%;
+}
+
+.pathD {
+	color: #ea650a;
+	text-decoration: underline;
+}
+
+@media screen and (max-width:608px) {
+    .padding-0 {
+      	padding-right:0px;
+    	padding-left:0px;
+    }
+}
+
+
+/* --------- Form -------*/
+
+#addonC2 {
+    height: 40px;
+    white-space: normal;
+    width: 100%;
+    margin:0;
+    font-size: 0.9em;
+}
+
+#botoneConfronta {
+    font-size: 0.7em;
+}
+
+/*----- Navbar -----------*/
+
+.containerImgMenu {
+  position: relative;
+  top: 95px;
+  margin-bottom: 60px;
+  z-index: 9;
+}
+
+.menuSfondo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: -420px;
+  z-index: 9;
+}
+
+.containerMenu {
+  position: absolute;
+  top: 15px;
+  left: 1%;
+  width: 100%;
+  margin: auto;
+  z-index: 15;
+}
+
+.botoneMenuSlider {
+  width: 100%;
+  height: 60px;
+  margin-left: 0px;
+  margin-top: 15px;
+}
+
+
+.botoneMenuSliderSelect {
+  background-color: #3a367c;
+}
+
+.botoneMenuSlider img{
+  margin-top: 3px;
+  margin-left: 20%; 
+  margin-right: 0px;
+}
+
+.botoneMenuSlider p {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.2em;
+  margin-top: 11px;
+  color: white;
+}
+
+.botoneTitolo {
+  margin-left: 15px;
+}
+
+.botoneTitolo:hover {
+  background-color: #6661b9;
+  cursor: default;
+}
+
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width:992px) {
+    .col-center {
+      margin-left: 25%;
+    }
+}

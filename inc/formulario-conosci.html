@@ -1,0 +1,60 @@
+<div class="col-xs-12">
+
+    <label class="rowMargin">Consumo anuale: </label>
+    <div class="input-group">
+      	<input type="number" class="form-control" name="consumo" min="0" max="40000" placeholder={{iniziale}} ng-model="consumo" ng-blur="inputc($event)" required>
+      	<span class="input-group-addon addonA">kW/h</span>
+    </div>
+
+</div>
+
+
+<div class="col-xs-12 rowMargin"> 
+
+    <div class="col-xs-5 formInputConsumo1">
+            <div class="input-group">
+              <span class="input-group-addon addonA">F1</span>
+              <input type="number" class="form-control" name="consumo" min="0" max="40000" placeholder="60%" ng-model="f1" ng-blur="input1($event)" required>
+            </div>
+    </div>
+
+    <div class="col-xs-6 formInputConsumo2">
+        <div class="input-group">
+          <span class="input-group-addon addonA">F2/F3</span>
+          <input type="number" class="form-control" name="consumo" min="0" max="40000" placeholder="40%" ng-model="f2" ng-blur="input1($event)" required>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-xs-12 rowMargin">
+    <label>Potenza: </label>
+</div>
+
+<div class="col-xs-12 personeCasa">
+
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[0].valore">{{potenza[0].nome}}
+      <span ng-if="potenzaSelected==potenza[0].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[1].valore">{{potenza[1].nome}}
+      <span ng-if="potenzaSelected==potenza[1].valore" class=" glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[2].valore">{{potenza[2].nome}}
+      <span ng-if="potenzaSelected==potenza[2].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[3].valore">{{potenza[3].nome}}
+      <span ng-if="potenzaSelected==potenza[3].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+    </label>
+
+</div>
+
+<div class="col-xs-12 rowMargin">
+
+    <label class="col-xs-8" id="labelIva">Hai la Partita IVA ?</label>
+
+    <label class="switch col-xs-4" id="switchIva">
+        <input type="checkbox" ng-model="ivaIniziale" ng-checked="ivaIniziale">
+        <div class="slider round"></div>
+    </label>
+
+</div>

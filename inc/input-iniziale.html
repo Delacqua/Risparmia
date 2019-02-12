@@ -1,0 +1,374 @@
+<!--  Sfondo  -->
+<div ng-class="sfondo"></div>
+
+
+<!--  input  -->
+<div class="formContainer" ng-controller="Menu">
+	<div class="col-xs-11 col-sm-11 col-md-8 col-lg-6 formSfondo" 
+	ng-style="{ 'height' : sfondoMenu.height, 'margin-top': sfondoMenu.margin }">
+
+            
+			<!-- Menu Luce / Gas -->
+        	<div ng-if="sfondo == 'formComparatore'" class="row" ng-init="showLuce = iniziale">
+        		
+        		<div class="col-xs-6" ng-click="cambiaInput('luce')">
+        			<div class="btn btn-sharp botoneMenuSlider" ng-class="{ botoneMenuSliderSelect:showLuce }">
+						<a>
+						  <img src="img\icon-luce.png" class="pull-left">
+						  <p>LUCE</p> 
+						</a>
+					</div>
+        		</div>
+
+        		<div class="col-xs-6" ng-click="cambiaInput('gas')">
+        			<div class="btn btn-sharp botoneMenuSlider" ng-class="{ botoneMenuSliderSelect:!showLuce }">
+						<a>
+						  <img src="img\icon-gas.png" class="pull-left">
+						  <p>GAS</p> 
+						</a>
+					</div>
+        		</div>
+        		
+        	</div> <!-- Fine Menu Luce / Gas -->
+
+        	<!-- Titolo Luce / Gas -->
+        	<div ng-if="sfondo != 'formComparatore'" class="row spazioMenuIniziale">
+        		<div class="btn btn-sharp botoneMenuSlider botoneTitolo">
+					<p ng-show="iniziale">LUCE</p>
+					<p ng-show="!iniziale">GAS</p> 
+				</div>
+        	</div>
+        	<!-- Fine Titolo Luce / Gas -->
+
+			<form name="formConosci" class="form-group formDati" autocomplete="on" ng-show="datiConsumo">
+
+            	<!--  iva  -->
+            	<div class="row rowMargin">
+
+            		 <div class="col-xs-9 col-sm-10 inputIni">
+		               <p>Hai la partita IVA ?</p>
+		            </div>
+
+		            <div class="col-xs-3 col-sm-2">
+		                <label class="switch">
+		                    <input type="checkbox" ng-model="ivaIniziale" ng-checked="ivaIniziale">
+		                    <div class="slider round"></div>
+		                </label>
+		            </div>
+
+            	</div>
+
+
+            	<!-- Conosci -->
+            	<div class="row marginMenu">
+
+            		 <div class="col-xs-9 col-sm-10 inputIni">
+		               <p>Conosci il tuo consumo ?</p>
+		            </div>
+
+		            <div class="col-xs-3 col-sm-2">
+		                <label class="switch">
+		                    <input type="checkbox" ng-model="formCompleti" ng-checked="formCompleti" checked>
+		                    <div class="slider round"></div>
+		                </label>
+		            </div>
+
+            	</div>
+
+            	<div ng-show="showLuce"> <!-- Luce -->
+            			
+            			<!-- Potenza -->
+						<div class="row marginMenu">
+							
+							<div class="col-xs-4 inputIni">
+							    <h3>Potenza erogata: </h3>
+							</div>
+
+							<div class="col-xs-8 personeCasa">
+							    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[0].valore">{{potenza[0].nome}}
+							      <span ng-if="potenzaSelected==potenza[0].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+							    </label>
+							    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[1].valore">{{potenza[1].nome}}
+							      <span ng-if="potenzaSelected==potenza[1].valore" class=" glyphicon glyphicon-ok"></span>
+							    </label>
+							    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[2].valore">{{potenza[2].nome}}
+							      <span ng-if="potenzaSelected==potenza[2].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+							    </label>
+							    <label class="col-xs-3 btn btn-sharp colorArancia" ng-model="potenzaSelected" uib-btn-radio="potenza[3].valore">{{potenza[3].nome}}
+							      <span ng-if="potenzaSelected==potenza[3].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+							    </label>
+							</div>
+
+						</div>
+
+
+		            	<div ng-show="formCompleti"> <!-- form conosci -->
+		            		
+		            		<!-- Consumo -->
+			                <div class="row marginMenu2">
+			                	<div class="col-xs-12">
+					      			<input type="number" class="form-control" name="consumo" min="0" max="40000" 
+					      			placeholder="KW consumati in un anno" ng-model="consumo" ng-blur="inputc($event)" required>
+					      			<span ng-show="!consumo && formCompilati" class="label label-warning labelShowHide"> Devi fornire il consumo </span>
+					      		</div>
+			                </div>
+
+		            	</div>
+
+		            	<div ng-show="!formCompleti"> <!-- form stima-->
+		            		
+		            		<div class="row marginMenu2">
+
+		            			<div class="col-xs-2">
+									<h3>Dimensione:</h3> 
+								</div>
+
+		            			<!-- Dimensione Casa -->
+								<div class="col-xs-3">
+								    <div class="form-inline">
+								      <div class="input-group">
+								        <input type="number" class="form-control" name="dimensioneCasa" min="0" max="400" placeholder="75" ng-model="dimensioneCasa">
+								        <span class="hidden-xs input-group-addon addonA">mq</span>
+								      </div>
+								    </div>
+								</div>
+
+								<div class="col-xs-2">
+									<h3>Persone:</h3> 
+								</div>
+
+								<!-- Persone -->
+			            		<div  class="col-xs-5 personeCasa">
+
+									<div class="btn-group">
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[0].valore">{{personeCasa[0].nome}}
+									        <span ng-if="personeSelected==personeCasa[0].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[1].valore">{{personeCasa[1].nome}}
+									      <span ng-if="personeSelected==personeCasa[1].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[2].valore">{{personeCasa[2].nome}}
+									        <span ng-if="personeSelected==personeCasa[2].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[3].valore">{{personeCasa[3].nome}}
+									        <span ng-if="personeSelected==personeCasa[3].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[4].valore">{{personeCasa[4].nome}}
+									      <span ng-if="personeSelected==personeCasa[4].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									</div>
+
+								</div>
+		            			
+		            		</div>
+
+		            		<!-- elettrodomestici  -->
+		            		<div class="row marginMenu2">
+
+		            			<div class="col-xs-4">
+							        <button class="btn btn-sharp colorArancia" id="addonC2" ng-model="elettrodomestici[0].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[0]})">{{elettrodomestici[0].nome}}
+							            <span ng-if="elettrodomestici[0].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+							        </button>
+							    </div>
+
+							    <div class="col-xs-4">
+							      <button class="btn btn-sharp colorArancia" id="addonC2" ng-model="elettrodomestici[4].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[4]})">{{elettrodomestici[4].nome}}
+							          <span ng-if="elettrodomestici[4].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+							        </button>
+							    </div>
+
+							    <div class="col-xs-4">
+							        <button class="btn btn-sharp colorArancia" id="addonC2" ng-model="elettrodomestici[5].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomestici[5]})">{{elettrodomestici[5].nome}}
+							            <span ng-if="elettrodomestici[5].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+							        </button>
+							    </div>
+		            			
+		            		</div>
+
+
+		            	</div>
+
+            	</div> <!-- Fine Luce -->
+				
+
+            	<div ng-show="!showLuce"> <!-- Gas -->
+            		<div ng-show="formCompleti"> <!-- form conosci -->
+	            		<div class="row marginMenu2">
+
+	            			<!-- Consumo -->
+	            			<div class="col-xs-12">
+	            		   		<input type="number" class="form-control" name="consumo" min="0" max="40000" 
+	            		   		  placeholder="Smc consumati in un anno" ng-model="consumo" ng-blur="inputc($event)" required>
+	            		   		<span ng-show="!consumo && formCompilati" class="label label-warning labelShowHide"> Devi fornire il consumo </span>
+	            		   	</div>
+
+	            		</div>
+            		</div>
+
+
+            		<div ng-show="!formCompleti"> <!-- form stima-->
+
+            				<div class="row marginMenu2">
+
+		            			<div class="col-xs-2">
+									<h3>Dimensione:</h3> 
+								</div>
+
+		            			<!-- Dimensione Casa -->
+								<div class="col-xs-3">
+								    <div class="form-inline">
+								      <div class="input-group">
+								        <input type="number" class="form-control" name="dimensioneCasa" min="0" max="400" placeholder="75" ng-model="dimensioneCasa">
+								        <span class="input-group-addon addonA">mq</span>
+								      </div>
+								    </div>
+								</div>
+
+								<div class="col-xs-2">
+									<h3>Persone:</h3> 
+								</div>
+
+								<!-- Persone -->
+			            		<div  class="col-xs-5 personeCasa">
+
+									<div class="btn-group">
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[0].valore">{{personeCasa[0].nome}}
+									        <span ng-if="personeSelected==personeCasa[0].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[1].valore">{{personeCasa[1].nome}}
+									      <span ng-if="personeSelected==personeCasa[1].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[2].valore">{{personeCasa[2].nome}}
+									        <span ng-if="personeSelected==personeCasa[2].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[3].valore">{{personeCasa[3].nome}}
+									        <span ng-if="personeSelected==personeCasa[3].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									      <label class="btn btn-sharp colorArancia" id="addonB" ng-model="personeSelected" uib-btn-radio="personeCasa[4].valore">{{personeCasa[4].nome}}
+									      <span ng-if="personeSelected==personeCasa[4].valore" class="hidden-xs glyphicon glyphicon-ok"></span>
+									      </label>
+									</div>
+
+								</div>
+		            			
+		            		</div>
+
+		            		<!-- Tipo consumo Gas -->
+		            		<div class="row marginMenu2">
+		            			<div class="col-xs-12">
+								    <div class="col-xs-4">
+								        <button class="btn btn-sharp colorArancia" id="addonC2" ng-model="elettrodomesticiGas[0].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomesticiGas[0]})">{{elettrodomesticiGas[0].nome}}
+								            <span ng-if="elettrodomesticiGas[0].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+								        </button>
+								    </div>
+
+								    <div class="col-xs-4">
+								      <button class="btn btn-sharp colorArancia" id="addonC2" ng-model="elettrodomesticiGas[1].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomesticiGas[1]})">{{elettrodomesticiGas[1].nome}}
+								          <span ng-if="elettrodomesticiGas[1].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+								        </button>
+								    </div>
+
+								    <div class="col-xs-4">
+								        <button class="btn btn-sharp colorArancia" id="addonC2" ng-model="elettrodomesticiGas[2].selezionato" uib-btn-checkbox ng-click="toggle({param:elettrodomesticiGas[2]})">{{elettrodomesticiGas[2].nome}}
+								            <span ng-if="elettrodomesticiGas[2].selezionato" class="hidden-xs glyphicon glyphicon-ok"></span>
+								        </button>
+								    </div>
+
+								</div>
+		            		</div>
+
+            		</div>
+
+            	</div> <!-- Fine Gas -->
+
+
+                <!-- Comune -->
+                <div class="row marginMenu2">
+                	<div formulario-comune comuni="comuni" comune="comuneSelected.comune" iniziale="Comune di riferimento" retifica="rettifica()"></div>
+                	<div class="col-xs-6">
+                		<span ng-show="!formComuneValid && formCompilati" class="label label-warning labelShowHide"> Devi fornire il comune </span>
+                	</div>
+                	
+                </div>
+
+            </form> 
+
+            <form name="datiPersonale" class="form-group formDati" autocomplete="on" ng-show="!datiConsumo">
+
+            	<!-- avvertimento -->
+            	<div class="row marginMenuPersonale">
+            		<div class="col-xs-12">
+            			<p><strong>Lasciaci il tuo numero in tranquillità.
+						Se non sarai interessato alle offerte visualizzate, verrà immediatamente cancellato dalle nostre liste.</strong></p>
+            		</div>
+            	</div>
+
+            	<!-- nome / cognome -->
+            	<div class="row marginMenu" ng-show="!ivaIniziale">
+            		<div class="col-xs-6">
+            			<input type="text" class="form-control" ng-model="privati2.nome" placeholder="Nome" required>
+            			<span ng-show="!privati2.nome && formCompilati" class="label label-warning labelShowHide"> Devi fornire il nome </span>
+            		</div>
+            		<div class="col-xs-6">
+            			<input type="text" class="form-control" ng-model="privati2.cognome" placeholder="Cognome" required>
+            			<span ng-show="!privati2.cognome && formCompilati" class="label label-warning labelShowHide"> Devi fornire il cognome </span>
+            		</div>
+            	</div>
+
+            	<!-- ragione sociale -->
+            	<div class="row marginMenu" ng-show="ivaIniziale">
+            		<div class="col-xs-12">
+            			<input type="text" class="form-control" placeholder="Ragione Sociale" ng-model="iva2.ragioneSociale" required>
+
+            		</div>
+            	</div>
+
+            	<!-- telefono email -->
+            	<div class="row marginMenu">
+            		<div class="col-xs-6">
+            			<input type="number" class="form-control" min="6" ng-model="privati2.telefono" placeholder="Telefono" required>
+            			<span ng-show="!privati2.telefono && formCompilati" class="label label-warning labelShowHide"> Devi fornire il Telefono </span>
+            		</div>
+
+            		<div class="col-xs-6">
+            			<input class="form-control" min="5" ng-model="privati2.email" placeholder="E-mail">
+            		</div>
+            	</div>
+
+            	<!-- privacy -->
+            	<div class="row marginMenu">
+            		<div class="col-xs-4 col-xs-offset-8">
+            			<div class="checkbox">
+                    		<label><input type="checkbox" nvalue="true" ng-model="privati2.privacy" required>Privacy - <a target="_blank" href="#/privacy">Leggi tutto</a></label>
+                    		<span ng-show="!privati2.privacy && formCompilati" class="label label-warning labelShowHide"> Devi accetare </span>
+                		</div>
+            		</div>
+            	</div>
+
+
+
+            </form>
+
+
+				
+			<!-- Path -->
+			<div class="row menuPath">
+				<div class="col-xs-3 col-sm-3 padding-0">
+					<a  ng-click="ritornoForm()"> <h3 ng-class="{'pathD': pathAtuale == 'cominciamo'}">1. COMINCIAMO</h3> </a>
+				</div>
+				<div class="col-xs-3 col-sm-3 padding-0">
+					<h3 ng-class="{'pathD': pathAtuale == 'dati'}">2. I TUOI DATI</h3>
+				</div>
+				<div class="col-xs-3 col-sm-3 padding-0">
+					<h3 ng-class="{'pathD': pathAtuale == 'compara'}">3. COMPARA</h3>
+				</div>
+
+            	<!-- Button Send -->
+                <div class="col-xs-3 col-sm-3 padding-0">
+                  <button type="button" class="btn btn-sharp colorArancia" 
+                  ng-click="aggiornaForm()">CONTINUA</button>
+                </div>
+			</div>
+
+	</div>
+</div>

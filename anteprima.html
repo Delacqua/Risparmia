@@ -1,0 +1,88 @@
+<div class="container2 rowMargin anteprima"> 
+    
+    <div class="row rowMargin titolo" id="Top"> <!-- titolo  -->
+        <div class="col-xs-3 col-sm-3">
+            <img src={{icone[0]}} class="pull-right">
+        </div>
+        <div class="col-xs-9 col-sm-9">
+            <div testo-pre quale={{testoGenerale[2]}}></div>
+        </div>
+    </div> <!-- fine titolo  -->
+
+
+    <div class="row anteprima1"> <!-- prima linea  -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-md-offset-1"> <!-- colona sinistra  -->
+
+            <img src={{icone[1]}}>
+
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 rowMargin"> <!-- colona centro  -->
+        
+                <div class="row luce3">
+                    <div icone-anteprima icone="img\checked.png" titolo="CONFRONTA">
+                        <p>le tariffe {{testoGenerale[3]}}</p>
+                    </div>
+                </div>
+                
+                <div class="row luce3">
+                    <div icone-anteprima icone="img\checked.png" titolo="SCEGLI">
+                        <p>l'offerta migliore</p>
+                    </div>
+                </div>
+
+                <div class="row luce3">
+                    <div icone-anteprima icone="img\checked.png" titolo="RICHIEDI">
+                        <p>online e risparmia</p>
+                    </div>
+                </div>
+
+        </div>
+
+
+        <div class="col-xs-12 col-sm-4 col-md-4 rowMargin text-center"> <!-- colona destra  -->
+            <div class="fundoIva">
+
+                <div class="luceIva text-center">
+                    <div testo-main-promo icone="img\suitcase.png" titolo="HAI LA PARTITA IVA ?"></div>
+                    <p>Puoi risparmiare fino al <b>15%</b> sulle tue bollette</p>
+                </div>
+
+            </div>
+          
+        </div>
+        
+
+      
+    </div> <!-- fine prima linea  -->
+
+    <div class="row rowMargin luceConfronta text-center"> <!-- botone confronta -->
+
+        <div class="col-xs-12 rowMargin">
+            <button class="btn btn-sharp" ng-click="apreForn()">
+                <img src={{pulsante[0]}}>
+                {{pulsante[1]}}
+            </button>
+        </div>
+
+
+      
+    </div> <!-- fine botone confronta  -->
+
+    <div class="row rowMargin testoGenerale"> <!-- testo generale  -->
+
+        <div class="col-xs-12 col-sm-6 col-lg-5">
+            <div testo-pre quale={{testoGenerale[0]}}></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-2">
+            <div testo-pre quale={{testoGenerale[1]}}></div>
+        </div>
+      
+    </div> <!-- finetesto generale  -->
+
+    <div class="row rowMargin testoPromo"> <!-- footer  -->
+        <div affidabile carousel="mostraA" next="next()" preview="preview()"></div>
+    </div> <!-- fine footer  -->
+</div>

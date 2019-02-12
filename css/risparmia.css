@@ -1,0 +1,156 @@
+.risparmia {
+	margin-top: 5em;
+	margin-bottom: 6em;
+}
+
+.risparmiaTitolo h1 {
+	color: #ea650a;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.row-eq-height {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.risparmiaCenter {
+	display: flex;
+  	align-items: center;
+}
+
+.risparmiaBotton {
+  	margin-top: auto;
+  	color: #e6e6e6;
+}
+
+.risparmiaHeader img{
+	max-width: 80px;
+	min-width: 50px;
+}
+
+.risparmiaBox {
+	background-color: #6661b9;
+	min-height: 140px;
+}
+
+.risparmiaTestoBox div:nth-child(2) {
+	background-color: #d9d9d9;
+}
+
+.risparmiaTestoBox strong {
+	color: #ea650a;
+}
+
+.risparmiaBox h3{
+	margin-left: 1em;
+	margin-right: 1em;
+	color: white;
+	font-weight: bold;
+}
+
+.risparmiaFoto {
+	position: relative;
+}
+
+.risparmiaFotoSfondo {
+	background-color: #6661b9;
+	max-height: 300px;
+	height: 55%;
+	position: absolute;
+	bottom: 0;
+	left: -50%;
+	width: 200%;
+	z-index: 9;
+}
+
+#risparmiaAvanti {
+	z-index: 12;
+}
+
+.risparmiaFoto img{
+	max-width: 389px;
+	min-width: 200px;
+	width: 100%;
+	height: auto;
+}
+
+.risparmiaFoto h2 {
+	color: #ea650a;
+	font-size: 2em;
+	color: white;
+	text-align: center;
+}
+
+@media screen and (max-width: 990px) {
+    .risparmiaFoto h2 {
+        color: #ea650a;
+    }
+}
+
+.risparmiaFoto p {
+	margin-bottom: 4em;
+}
+
+@media screen and (max-width: 990px) {
+    .risparmiaFoto p {
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .risparmiaFoto p {
+        margin-bottom: 0;
+    }
+}
+
+.risparmiaFotoFormTitolo h3 {
+	color: #ea650a;
+	font-weight: bold;
+}
+
+.risparmiaForm {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: white;
+	background-color: #ea650a;
+}
+
+.risparmiaForm a {
+	color: #0000cc;
+}
+
+.risparmiaMargin {
+	margin-top: 5em;
+}
+
+.risparmiaFormSfondo {
+	background-color: #d9d9d9;
+	position: absolute;
+	bottom: -550px;
+	left: -50%;
+	width: 200%;
+	height: 550px;
+}
+
+.risparmiaMsgForm {
+	width: 500px;
+	height: 350px;
+	margin-left: 20%;
+	background-color: #ea650a;
+	color: white;
+}
+
+@media screen and (max-width: 990px) {
+    .risparmiaMsgForm {
+       margin-left: 0;
+    }
+}
+
+.risparmiaMsgForm p {
+	margin-top: 30%;
+}

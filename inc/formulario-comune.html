@@ -1,0 +1,8 @@
+<div class="col-sm-12 col-md-12">
+
+	<input type="text" class="form-control" placeholder={{iniziale}} list="nomeComune" ng-model="comune" ng-blur="retifica($event)" >
+	<datalist id="nomeComune">
+	    <option ng-repeat="com in comuni | filter: comune | limitTo: 5" value={{com.denominazione}}>{{com.regione}}</option>
+	</datalist>
+
+</div>

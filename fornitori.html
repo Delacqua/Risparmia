@@ -1,0 +1,113 @@
+<div class="row rowMargin" ng-controller="Navbar">
+
+  <!-- Menu xs sm-->
+  <div menu-fornitori open="mostraMenuSmall()"></div>
+
+
+<!-- Coluna a sinistra-->
+  
+  <div class="compilaForm" ng-controller="Menu">
+  
+    <div prende-schermo></div> <!-- Test Schermo-->
+
+    <div class="col-xs-6 col-md-3" ng-class="moveMenu"> 
+
+        
+        <!-- conosce / stima -->
+        <div input-conosci></div>
+
+
+        <div class="row rowMargin menuAltezza" id="compilaCompleti"> <!-- Compila Consumo -->
+
+            <form name="formConosci" class="form-group formDati" autocomplete="on">
+
+                <!-- Comune -->
+                <div formulario-comune comuni="comuni" comune="comuneSelected.comune" iniziale={{comuneIniziale}} retifica="rettifica()"></div>
+
+                <!-- Luce -->
+                <div ng-if="tipoForn == 'luce'" formulario-conosci consumo="formPost.consumo" iniziale={{consumoIniziale}} f1="formPost.f1" f2="formPost.f2" 
+                inputc="inputConsumo()" input1="inputFascia1()" input2="inputFascia2()" 
+                potenza-selected="potenzaSelected" potenza="potenza" iva-iniziale="iva">
+                </div>
+
+                <!-- Gas -->
+                <div ng-if="tipoForn == 'gas'" formulario-conosci-gas consumo="formPost.consumo" iniziale={{consumoIniziale}} inputc="inputConsumo()" iva-iniziale="iva">
+                </div>
+
+                <!-- Send -->
+                <div class="col-xs-8 col-xs-offset-4 col-sm-7 col-sm-offset-5 col-md-8 col-md-offset-4 rowMargin">
+                  <button type="button" class="btn btn-sharp colorArancia rowMargin" id="botoneConfronta" 
+                  ng-click="aggiornaForm2(comuneSelected.regione, formPost.consumo, formPost.f1, formPost.f2, 0, potenzaSelected, iva,comuneSelected.comune)">CONFRONTA</button>
+                </div>
+
+            </form> 
+
+        </div> <!-- fine Compila Consumo -->
+
+        <div class="row rowMargin menuAltezza" id="compilaIncompleti"> <!-- Stima -->
+
+            <form name="formStima" class="form-group formDati" autocomplete="on">
+
+                <!-- Comune -->
+                <div formulario-comune comuni="comuni" comune="comuneSelected.comune" iniziale={{comuneIniziale}} retifica="rettifica()"></div>
+
+                <!-- Luce -->
+                <div ng-if="tipoForn == 'luce'" formulario-calcolare persone-selected="personeSelected" persone-casa="personeCasa" dimensione-casa="dimensioneCasa" 
+                elettrodomestici="elettrodomestici" toggle="togglePotenza(param)" potenza-selected="potenzaSelected" potenza="potenza">
+                </div>
+
+                <!-- Gas -->
+                <div ng-if="tipoForn == 'gas'" formulario-calcolare-gas persone-selected="personeSelected" persone-casa="personeCasa" dimensione-casa="dimensioneCasa"
+                elettrodomestici="elettrodomesticiGas" toggle="togglePotenza(param)">
+                </div>
+
+                <!-- Send -->
+                <div class="col-xs-8 col-xs-offset-4 col-sm-7 col-sm-offset-5 col-md-8 col-md-offset-4 rowMargin">
+                  <button type="button" class="btn btn-sharp colorArancia rowMargin" id="botoneConfronta" ng-disabled="isFormStimaValid()" 
+                  ng-click="aggiornaStimaForm2(comuneSelected.regione, elettrodomestici, personeSelected, dimensioneCasa, potenzaSelected)">CONFRONTA</button>
+                </div>
+
+            </form>
+
+        </div>  <!-- fine Stima -->
+
+    </div>
+
+  </div> <!-- Fine Coluna a sinistra-->
+
+
+  <!-- Coluna a destra-->
+  <div ng-class="movePanello"> <!-- move panello (xs sm) -->
+    
+      <div class="col-xs-12 col-md-8 col-md-offset-1" ng-class="movePanello != '' ? 'panelloAltezza' : ''"> 
+     
+
+      <!-- Header Fornitori -->
+      <div header-fornitori ricerca="ricerca.nome" ordina-nome="ordine('nome')" ordina-prezzo="ordine('totale')" sort-type="sortType" sort-reverse="sortReverse" ></div>
+
+
+      <!--Panello dati azienda -->
+      
+          <!-- azienda vetrina -->
+          <div class="rowMarginP" ng-repeat="azD in vetrina" >
+              <div panello azienda=azD risparmia="risparmia(azD.totale)" vetrina="true"></div>
+          </div>
+
+          <!-- search null -->
+          <div ng-if="quantidade.length == 0">  <!-- ricerca vuota -->
+              <!--div class="rowMarginP" panello azienda=todos[0] risparmia="risparmia(todos[0].prezzoE.prezzoT)"> </div-->
+          </div>
+          
+          <!-- aziende -->
+          <div class="rowMarginP"  ng-repeat="az in quantidade = (todos.slice(0,todos.length) | orderBy:sortType:sortReverse | filter:ricerca.nome | filter:ricerca.prodotto)">
+              <div panello azienda=az risparmia="risparmia(az.totale)" vetrina="false"></div>
+          </div>
+      
+      </div>
+
+
+  <!--Fine dello panello dati azienda -->
+
+  </div> 
+  <!-- Fine Coluna a destra--> 
+</div>

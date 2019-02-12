@@ -1,0 +1,26 @@
+<div class="row rowMargin">
+
+    <div class="col-xs-12 col-sm-8 col-md-8">
+      <div class="form-inline formDati">
+        <div class="input-group">
+          <span class="input-group-addon">Ricerca:</span>
+          <input type="text" class="form-control" ng-model="ricerca" placeholder="">
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xs-2 col-xs-offset-8 col-sm-2 col-sm-offset-0 col-md-2" id="formOrdina">
+        <a ng-click="ordinaNome()"> Nome 
+          <span class="caret" ng-show="sortType == 'nome' && !sortReverse"></span>
+          <span class="caret" id="setaRotate" ng-show="sortType == 'nome' && sortReverse"></span>
+        </a>
+    </div>
+    
+    <div class="col-xs-2 col-sm-2 col-md-2" id="formOrdina">
+        <a ng-click="ordinaPrezzo()"> Prezzo 
+          <span class="caret" ng-show="sortType == 'totale' && !sortReverse"></span>
+          <span class="caret" id="setaRotate" ng-show="sortType == 'totale' && sortReverse"></span>
+        </a>
+    </div>
+
+</div>

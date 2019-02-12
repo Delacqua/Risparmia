@@ -1,0 +1,50 @@
+        <div class="row">
+
+          <div class="col-sm-6">
+
+            <div class="input-group">
+              <span class="input-group-btn">
+                <a class="btn btn-info" type="button" href="#/aggiunge">Aggiunge Azienda</a>
+              </span>
+              <input class="form-control" type="text" ng-model="ricerca2.nome" placeholder="Busca Azienda">
+            </div><!-- /input-group -->
+
+          </div>
+
+
+                 
+          <div class="col-sm-6">
+            <a href="#/imposte" class="btn btn-default" role="button">Imposte</a>
+          </div>
+
+
+        </div>        
+
+        <div class="row upperSpace2">
+        
+          <div ng-repeat="az in todos | filter:ricerca2">
+
+              <div class="col-sm-10 rowSpace">
+                  <pre>
+
+Nome = {{az.nome}}
+Prodotto = {{az.prodotto}}
+Servizi = {{az.serviziE}}
+Fatturazione = {{az.fatturazioneE}}
+Prezzo Monorario = {{az.prezzoE[0]}}
+F1: {{az.f1}}
+F2: {{az.f2}}
+F3: {{az.f3}}
+                  </pre>
+
+              </div>
+               
+
+               <div class="col-sm-2 btn-group-vertical">
+                  <a ng-click="aggiorna(az)" class="btn btn-warning upperSpace">Aggiorna</a>
+                  <a ng-click="cancela(az)" class="btn btn-danger upperSpace">Delete</a>
+               </div>
+
+          </div>
+
+        </div>

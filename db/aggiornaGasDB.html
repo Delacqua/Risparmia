@@ -1,0 +1,221 @@
+<form name="update"> <!-- Comincia form azienda -->
+
+<div class="row panel panel-primary">
+	
+	<div class="panel-heading"> <h3 class="panel-title"> {{vecchio.nome}} </h3> </div>
+
+	<div class="panel-body">
+
+		<div class="col-sm-8"> <!-- form lato destro -->
+
+			<div class="col-sm-12 rowSpace">
+				<div inputtesto nome="Nome:" valore="vecchio.nome"></div>
+	        </div>
+
+
+			<div class="col-sm-12 rowSpace">
+				<div inputtesto nome="Prodotto:" valore="vecchio.prodotto"></div>
+	        </div>
+
+	        <div class="col-sm-12 rowSpace"> <!-- Servizi -->
+	            <div class="checkbox">
+	                <label ng-repeat="item in serv">
+	                    <input type="checkbox" name="item" value="{{item.serviziagg}}" ng-checked="vecchio.serviziAgg.indexOf(item.serviziagg) > -1" ng-click="toggleSelection(selectionServ,item.serviziagg)"> {{item.serviziagg}}
+	                </label>
+	                <label ng-repeat="itemR in vecchio.serviziR" id="cancelato">
+	                    <input type="checkbox" name="itemR" value="{{itemR}}" ng-checked="vecchio.serviziAgg.indexOf(itemR) > -1" ng-click="toggleSelection(selectionServ,itemR)"> {{itemR}}
+	                </label>
+	            </div>
+	        </div>
+
+	        <div class="col-sm-12 rowSpace"> <!-- Fatturazione -->
+	            <div class="checkbox">
+	                <label ng-repeat="item2 in fatt">
+	                    <input type="checkbox" name="item2" value="{{item2.fatturazione}}" ng-checked="vecchio.fatturazione.indexOf(item2.fatturazione) > -1" ng-click="toggleSelection(selectionFat,item2.fatturazione)"> {{item2.fatturazione}}
+	                </label>
+	                <label ng-repeat="item2R in vecchio.fatturazioneR" id="cancelato">
+	                    <input type="checkbox" name="item2R" value="{{item2R}}" ng-checked="vecchio.fatturazione.indexOf(item2R) > -1" ng-click="toggleSelection(selectionFat,item2R)"> {{item2R}}
+	                </label>
+	            </div>
+	        </div>
+
+
+	        <div class="col-sm-12 rowSpace"> <!-- Regione -->
+	            <div class="checkbox">
+	                <label ng-repeat="regione in regioni">
+	                    <input type="checkbox" name="regione" value="{{regione}}" ng-checked="vecchio.regione.indexOf(regione) > -1" ng-click="toggleSelection(selectionReg,regione)"> {{regione}}
+	                </label>
+	            </div>
+	        </div>
+
+
+    	</div> <!-- fine form lato destro -->
+
+
+		<div class="col-sm-4"> <!-- form lato sinistro -->
+
+			<div class="col-sm-12">
+		        <img alt="Logo Fornitori" class="img-responsive img-center" ng-src="../{{vecchio.logo}}" ng-show="vecchio.logo"></img>
+		    </div>
+
+		    <div class="col-sm-12">
+		        <div class="input-group">
+		          	<span class="input-group-addon" id="basic-addon1">Logo:</span>
+		            <input type="text" class="form-control" placeholder={{vecchio.logo}} aria-describedby="basic-addon1" ng-model="vecchio.logo">
+		    	</div>
+	        </div>
+			
+		</div> <!-- fine form lato sinistro -->
+	
+	</div>
+
+</div> <!-- fine del panello -->
+
+
+	<div class="panel panel-info"> <!--- Panello Prezzo -->
+	  	<div class="panel-heading text-center">Prezzo </div>
+	  	<div class="panel-body">
+
+	  		<div class="row rowSpace">
+	  			<div class="col-sm-12">
+	  				<div inputnumero nome="Prezzo:" valore="vecchio.prezzo"></div>
+	  			</div>
+	  		</div>
+
+	  		<div class="row rowSpace">
+		  		<div class="col-sm-4" ng-repeat="prezzo in regioneGas track by $index">
+		  			<div ng-if="!vecchio.prezzoMateria[$index]" ng-init="vecchio.prezzoMateria[$index] = 0"></div>
+		  			<div inputnumero nome="Regione {{$index + 1}}:" valore="vecchio.prezzoMateria[$index]"></div>
+		        </div>	  			
+	  		</div>
+
+
+	  </div>
+	</div> <!--- fine Panello Prezzo -->
+
+
+	<div class="panel panel-info"> <!--- Panello transporto -->
+	  	<div class="panel-heading text-center"> Rede</div>
+	  	<div class="panel-body">
+			
+			<div class="col-sm-6 rowSpace">
+				<div inputnumero nome="Transporto:" valore="vecchio.transporto"></div>
+			</div>
+
+			<div class="col-sm-6 rowSpace">
+				<div inputnumero nome="Stoccaggio:" valore="vecchio.stoccaggio"></div>
+			</div>
+
+		 </div>
+	</div> <!--- fine Panello transporto -->
+
+
+	<div class="panel panel-info"> <!--- Panello Altre tasse -->
+	  	<div class="panel-heading text-center">Altre Tasse</div>
+	  	<div class="panel-body">
+			
+			<div class="col-sm-6" ng-repeat="prezzo in vecchio.tasseFise track by $index">
+				<div inputnumero nome="Altre Tasse:" valore="vecchio.tasseFise[$index]"></div>
+			</div>
+
+		 </div>
+	</div> <!--- fine Panello transporto -->
+
+
+
+</form> <!-- fine form azienda -->
+
+    <div class="col-sm-12 rowSpace" ng-show="vecchio.dataIni">
+        Data dell'ultima modifica: {{vecchio.dataIni}}
+    </div>
+
+    <div class="col-sm-12  text-center rowSpace">
+	    <button class="btn btn-warning" ng-click="submitForm(vecchio)"> Aggiorna </button>
+	    <a type="button2" class="btn btn-info" ng-click="ritorna()"> Ritorno </a>
+	</div>
+
+
+<!-- /////////////////////////////////////////////////  -->
+
+
+<div class="row"> <!-- Comincia form Servizi / Fatturazione -->
+
+	<div class="col-sm-12 rowSpace"> <!-- apre form -->
+            <button class="btn btn-secondary" type="button" ng-click="openServ()">Aggiorna Servizi / Fatturazione</button>
+	</div>
+
+	<div ng-show="addon" class="rowSpace"> <!-- tabella servizi / fatturazione -->
+
+		<div class="col-sm-6 rowSpace"> <!-- servizi -->
+
+			<div class="panel panel-default">
+				
+				<div class="panel-heading"> Servizi </div>
+				
+				<div ng-repeat="item3 in serv">
+				
+					<div class="list-group">
+						<div class="list-group-item">
+							<strong>{{item3.serviziagg}}</strong>
+						    <a class="close" ng-click="removeItem(tServiziagg,item3)">
+						    <span class="glyphicon glyphicon-remove"></span>
+						    </a>
+					    </div>
+					</div>
+
+				</div>
+			
+				<div class="panel-footer">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">Nuovo Servizio:</span>
+						<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Nuovo Servizzo" ng-model="nuovoServizo">
+						<span class="input-group-btn">
+					       <button class="btn btn-primary" type="button" ng-click="aggiungeItem(tServiziagg,nuovoServizo)">
+					       		<span class="glyphicon glyphicon-plus-sign"></span>
+					       </button>
+					    </span>
+					</div>
+				</div>
+
+			</div>
+
+		</div> <!-- Fine servizi -->
+
+		<div class="col-sm-6 rowSpace"> <!-- fatturazione -->
+
+			<div class="panel panel-default">
+				
+				<div class="panel-heading"> Fatturazione </div>
+				
+				<div ng-repeat="item4 in fatt">
+				
+					<div class="list-group">
+						<div class="list-group-item">
+							<strong>{{item4.fatturazione}}</strong>
+						    <a class="close" ng-click="removeItem(tFatturazione,item4)">
+						    	<span class="glyphicon glyphicon-remove"></span>
+						    </a>
+					    </div>
+					</div>
+
+				</div>
+			
+				<div class="panel-footer">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">Nuova Fatturazione:</span>
+						<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Nuova:" ng-model="nuovoFatturazione">
+						<span class="input-group-btn">
+					       <button class="btn btn-primary" type="button" ng-click="aggiungeItem(tFatturazione,nuovoFatturazione)">
+					       		<span class="glyphicon glyphicon-plus-sign"></span>
+					       </button>
+					    </span>
+					</div>
+				</div>
+
+			</div>
+
+		</div> <!-- Fine fatturazione -->
+			
+	</div>
+
+</div>

@@ -1,0 +1,321 @@
+/*----- FORNITORI Destra --------- */
+
+.panel-heading {
+    font-size: 1.1em;
+}
+
+#destaque {
+    position: relative;
+    top: 1em;
+    text-align: center;
+    width: 100px;
+    height: 37px;
+    color: white;
+
+    background-image: url("../img/tag.png");
+}
+
+#destaque h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#destaque span {
+    font-size: 0.8em;
+}
+
+#btDestaque {
+    margin-top: 1em;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.vright {
+    text-align: right;
+    background-color: red;
+}
+
+.fcenter {
+    display: flex;
+    align-items: center;
+}
+
+.tableExpand {
+    width: 60%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.tableExpand th:nth-child(2),
+.tableExpand td:nth-child(2)  {
+    text-align: center;
+}
+
+
+#nota {
+    color: rgba(0,0,0,0.5);
+    margin-left: 2.7em;
+}
+
+#setaRotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#fatturazione {
+    position:relative;
+    bottom:-1.5em;
+    left:-1.3em;
+    font-size: 90%;
+}
+
+#fatturazione span {
+    font-weight: bold;
+}
+
+.colorBlue {
+  border-color: #183967;
+  background-color: #16345f;
+}
+
+.colorBlue:hover, 
+.colorBlue:focus, 
+.colorBlue:active, 
+.colorBlue.active, 
+.open .dropdown-toggle.colorBlue { 
+  color: #ffffff; 
+  background-color: #0f223e; 
+  border-color: #183967; 
+}
+
+#labelIva {
+    font-size: 0.9em;
+    height: 50px;
+}
+
+#switchIva {
+    margin-top: 10px;
+}
+
+/* --------- Panello -------*/
+
+.panel-primary .destaque{
+    display: none;
+}
+
+.panel {
+    border-color:#e6e6e6;
+    box-shadow: 5px 5px 5px #f2f2f2;
+}
+
+.panel.panel-primary > .panel-heading {
+    background-image: none;
+    background-color: #494588;
+    color: white;
+}
+
+.panel.panel-success > .panel-heading {
+    background-image: none;
+    background-color: #ea650a;
+    color: white;
+}
+
+.panel ul {
+    margin-left: -20px;
+}
+
+.panel li {
+    list-style-type: square;
+    margin: 0 0 -5px 0;
+    color: #006600;
+}
+
+.panel li span{
+    color: black;
+}
+
+.panel h2 {
+    font-weight: bold;
+}
+
+.panel img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+/* ----------  Transitions leggi tutto   -------- */
+
+summary{
+    cursor:pointer; 
+    text-decoration: none;
+    outline:none;
+    border-bottom:thick double rgba(0,0,0,0.1);
+}
+
+details[open] summary {
+    border-bottom:solid rgba(0,0,0,0.1);
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform: translateY(0);
+    }
+}
+details[open] {
+    animation-name: fadeInDown;
+    animation-duration: 0.5s;
+}
+
+
+/* --------- Menu Small -------*/
+
+
+.colorArancia {
+  border-color: #f67723;
+  background-color: #ea650a;
+}
+
+.colorArancia:hover, 
+.colorArancia:focus, 
+.colorArancia:active, 
+.colorArancia.active, 
+.open .dropdown-toggle.colorArancia { 
+  color: #ffffff; 
+  background-color: #ff9933; 
+  border-color: #f67723; 
+} 
+
+.colorArancia:focus {
+  background-color: #f67723; 
+}
+
+.btn-group label {
+    width: 5em;
+}
+
+.modulo p{
+    color: #6661b9;
+    font-weight: bold;
+}
+
+#privati {
+  display: block;
+}
+
+#iva {
+  display: none;
+}
+
+#privacy {
+    margin-top: 25px;
+}
+
+#privacy a {
+    font-size: 0.8em;
+}
+
+.labelShowHide {
+  transition: all linear 0.5s;
+  position: absolute;
+}
+
+.labelShowHide.ng-hide {
+    opacity: 0;
+}
+
+.menuSmall1 {
+    position: relative;
+    left: 100%;
+    margin-left: -50px;
+    width: 50%;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: #ea650a;
+    cursor: pointer;
+}
+
+.menuSmall2 {
+    z-index: 14;
+    position: relative;
+    left: 50%;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.menuAltezza {
+    height: 800px;
+}
+
+.panelloAltezza {
+    height: 100%;
+    margin-bottom: -100%;
+    overflow: hidden;
+}
+
+.spazioPanelloEntrata {
+    z-index: 12;
+    position: relative;
+    -ms-transform: translate(60%,-930px); /* IE 9 */
+    -webkit-transform: translate(60%,-930px); /* Safari */
+    transform: translate(60%,-930px); /* Standard syntax */
+    
+    -moz-transition: transform 0.35s ease-in;
+    transition: transform 0.35s ease-in;
+}
+
+.spazioPanelloUscita {
+    z-index: 13;
+    position: relative;
+    -ms-transform: translate(0%,-930px); /* IE 9 */
+    -webkit-transform: translate( 0%,-930px); /* Safari */
+    transform: translate(0%,-930px); /* Standard syntax */
+    
+    -moz-transition: transform 0.35s ease-out;
+    transition: transform 0.35s ease-out;
+}
+
+.spazioMenuEntrata {
+    z-index: 13;
+    position: relative;
+    -ms-transform: translate(0%,0px); /* IE 9 */
+    -webkit-transform: translate( 0%,0px); /* Safari */
+    transform: translate(0%,0px); /* Standard syntax */
+    
+    -moz-transition: transform 0.35s ease-in;
+    transition: transform 0.35s ease-in;
+
+}
+
+.spazioMenuUscita {
+    z-index: 12;
+    position: relative;
+    -ms-transform: translate(-110%,0%); /* IE 9 */
+    -webkit-transform: translate(-110%,0%); /* Safari */
+    transform: translate(-110%,0%); /* Standard syntax */
+    
+    -moz-transition: transform 0.35s ease-out;
+    transition: transform 0.35s ease-out;
+
+}

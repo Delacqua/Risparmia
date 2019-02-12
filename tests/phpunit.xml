@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" bootstrap="C:\xampp\php\pear\PHPUnit\autoload.php">
+    <testsuites>
+        <testsuite name="parziale">
+            <directory suffix='.php'>./</directory>
+            <exclude>DatabaseConnectTest.php</exclude>
+            <exclude>utentiTest.php</exclude>
+            <exclude>simpleTest.php</exclude>
+        </testsuite>
+    </testsuites>
+
+    <testsuites>
+        <testsuite name="tutti">
+            <directory suffix='.php'>./</directory>
+        </testsuite>
+    </testsuites>
+
+</phpunit>
+
+
+<!--testsuites>
+  <testsuite name="Test Suite">
+    <directory>/*Test.php files</directory>
+    <file>/DatabaseConnectTest.php</file>
+    <file>UrlsTest</file>
+    <exclude>/path/to/exclude</exclude>
+  </testsuite>
+</testsuites-->

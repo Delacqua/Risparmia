@@ -1,0 +1,179 @@
+/* --------- colona sinistra -------*/
+.titolo h1 {
+  font-size: 2em;
+}
+
+.titolo p {
+  font-size: 1.2em;
+}
+
+/* --------- form -------*/
+.formDati input,
+.formDati textarea {
+    background-color:#f2f2f2;
+    border-radius:0;
+    border:0px solid white;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: white;
+  outline: none;
+  border:0px solid white;
+  box-shadow: 0 0 0px white;
+  border: 0px solid white;
+}
+
+input[type=number] {-moz-appearance: textfield;}
+
+input[type="checkbox"]:required {
+  border: 0px solid white;
+  box-shadow: 0 0 0px white;
+  outline: none;
+}
+
+.formDati ::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999999;
+}
+.formDati :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999999;
+}
+.formDati ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999999;
+}
+.formDati :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999999;
+}
+
+.formDati button {
+  font-size: 1em;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 90%;
+}
+
+
+
+/* Show hidden */
+
+#compilaCompleti {
+  display: block;
+}
+
+#compilaIncompleti {
+  display: none;
+}
+
+
+#tableFullBody {
+  display: table;
+}
+
+#tableFullSide {
+  float: none;
+  display: table-cell;
+}
+
+/* -----   Form ------- */
+
+#formOrdina {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.compilaForm {
+    position: relative;
+    height: 100%;
+    font-size: 1.5em;
+}
+
+.compilaForm h2 {
+  color: #6661b9;
+  font-size: 1.1em;
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+.compilaForm label {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.inputIni p{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.inputIni h3{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.compilaForm .switch{
+    margin-top: 20px;
+}
+
+.formInputConsumo1 {
+    margin-left: -20px;
+    width: 140px;
+}
+
+.formInputConsumo2 {
+    margin-left: -15px;
+    width: 140px;
+}
+
+.addonA {
+    color: white;
+    background-color: #ea650a;
+    border: 1px solid #ea650a;
+    border-radius: 0px;
+}
+
+#addonB {
+    width: 20%;
+}
+
+#addonC {
+    width: 98%;
+    height: 50px;
+    margin-top: 1%;
+    white-space: normal;
+    padding: 0;
+}
+
+.addonD {
+    width: 50%;
+    padding: 0;
+    font-size: 0.7em;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.rowMarginP {
+  margin-top:0.5em;
+}
+
+.personeCasa {
+  font-size: 0.8em;
+}
+
+.cosaUtilizzi {
+  font-size: 0.8em;
+}

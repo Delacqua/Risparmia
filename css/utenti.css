@@ -1,0 +1,60 @@
+#tbcenter {
+   text-align: center;
+}
+
+#tbprivati td:nth-child(1) {
+	width: 8%;
+	font-weight: bold;
+}
+#tbprivati td:nth-child(2) {
+	width: 10%;
+}
+#tbprivati td:nth-child(3) {
+	width: 16%;
+}
+#tbprivati td:nth-child(4) {
+	width: 16%;
+}
+#tbprivati td:nth-child(5) {
+	width: 16%;
+}
+#tbprivati td:nth-child(6) {
+	width: 14%;
+}
+#tbprivati td:nth-child(7) {
+	width: 10%;
+}
+#tbprivati td:nth-child(8) {
+	width: 2%;
+}
+#tbprivati td:nth-child(9) {
+	width: 6%;
+}
+
+th a {
+	cursor:pointer; 
+    text-decoration: none;
+    outline:none;
+}
+
+td a {
+    display:block;
+    width:100%;
+}
+
+td {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgba(153, 255, 204,0.2);
+}
+
+#setaRotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}

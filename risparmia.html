@@ -1,0 +1,170 @@
+<div class="rowMargin risparmia"> 
+    
+    <!-- Titolo -->
+	<div class="row rowMargin risparmiaTitolo">
+		<div class="col-xs-12 text-center">
+			<h1>Hai bisogno di un consiglio per risparmiare?</h1>
+		</div>
+	</div>
+
+	<!-- texto header -->
+	<div class="row row-eq-height rowMargin risparmiaHeader">
+		<div class="col-xs-3 col-sm-2 col-md-3">
+			<img src="img/coins.png" class="img-responsive pull-right">
+		</div>
+
+		<div class="col-xs-9 col-sm-10 col-md-8 risparmiaCenter">
+			<p>I nostri consulenti sono sempre a tua disposizione per cercare le migliori soluzioni per il tuo portafogli.</br>
+			Lasciaci il tuo numero, verrai richiamato per darti tutta l’assistenza di cui hai bisogno</p>
+		</div>
+	</div>
+
+	<!-- texto box -->
+	<div class="row row-eq-height rowMargin risparmiaTestoBox">
+		<div class="col-xs-4 col-sm-3">
+			<div class="risparmiaBox risparmiaCenter">
+				<h3>Non siamo come gli altri!</h3>
+			</div>
+		</div>
+
+		<div class="col-xs-8 col-sm-9 risparmiaCenter">
+			<p><strong>Risparmiafacile.net</strong> è l’unico portale nato esclusivamente per stare dalla parte dei consumatori! 
+			Non utilizziamo i numeri di telefono degli utenti per tempestarli di chiamate a tutti gli orari per vendere servizi o prodotti.</p>
+		</div>
+	</div>
+
+	<!-- texto foto -->
+	<div class="row row-eq-height rowMargin risparmiaFoto">
+
+		<div class="risparmiaFotoSfondo">
+		</div>
+	
+		<div class="col-xs-5 col-sm-4 risparmiaBotton" id="risparmiaAvanti">
+			<img src="img/girl.png" class="img-responsive">
+		</div>
+	
+		<div class="col-xs-7 col-sm-8 risparmiaBotton" id="risparmiaAvanti">
+			<div class="col-xs-12">
+				<h2>Risparmiafacile.net rispetta la tua Tranquillità </h2>
+			</div>
+			<div class="col-xs-12 rowMargin" id="risparmiaAvanti">
+				<p><strong>Verrai richiamato una solo volta, solo da noi.</strong> Se non sarai interessato alle offerte per risparmiare in bolletta, il tuo numero <strong>non verrà più contattato e sarà cancellato automaticamente dalle nostre liste.</strong></p>
+			</div>
+			
+		</div>
+
+		<div class="risparmiaFormSfondo">
+			
+		</div>
+
+	</div>
+
+
+
+
+	<!-- form titolo -->
+	<div class="row rowMargin risparmiaFotoFormTitolo">
+		<div class="col-xs-12 text-center">
+			<h3>Cosa stai aspettando?</h3>
+		</div>
+	</div>
+
+	<!-- form texto -->
+	<div class="row rowMargin">
+		<div class="col-xs-12 text-center">
+			<p>Compila il form per scoprire come risparmiare tanti soldi sulle bollette!</p>
+		</div>
+	</div>
+
+	<!-- form -->
+	<div class="row rowMargin">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 text-center">
+			    
+
+			<form name="datiPersonale" class="form-group formDati risparmiaForm" ng-show="showForm">
+
+			    <!-- nome / cognome -->
+            	<div class="row marginMenu">
+            		<div class="col-xs-12">
+            			<input type="text" class="form-control" ng-model="privati3.nome" placeholder="Nome" required>
+            			<span ng-show="!privati3.nome && formCompilati" class="label label-warning labelShowHide"> Devi fornire il nome </span>
+            		</div>
+            	</div>
+
+            	<div class="row marginMenu">
+            		<div class="col-xs-12">
+            			<input type="text" class="form-control" ng-model="privati3.cognome" placeholder="Cognome" required>
+            			<span ng-show="!privati3.cognome && formCompilati" class="label label-warning labelShowHide"> Devi fornire il cognome </span>
+            		</div>
+            	</div>
+
+            	<!-- telefono email -->
+            	<div class="row marginMenu">
+            		<div class="col-xs-12">
+            			<input type="number" class="form-control" min="6" ng-model="privati3.telefono" placeholder="Telefono" required>
+            			<span ng-show="!privati3.telefono && formCompilati" class="label label-warning labelShowHide"> Devi fornire il Telefono </span>
+            		</div>
+            	</div>
+
+            	<div class="row marginMenu">
+            		<div class="col-xs-12">
+            			<input class="form-control" min="5" ng-model="privati3.email" placeholder="E-mail">
+            			<span ng-show="!privati3.email && formCompilati" class="label label-warning labelShowHide"> Devi fornire un email</span>
+            		</div>
+            	</div>
+
+            	<div class="row marginMenu">
+            		<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3 text-left">
+            			Voglio risparmiare:
+            			<span ng-show="!privati3.tipoRisparmio && formCompilati" class="label label-warning labelShowHide"> Devi scegliere uno </span>
+            		</div>
+
+            		<div class="col-xs-3 col-sm-3 col-md-2 text-left">
+						<input type="radio" ng-model="privati3.tipoRisparmio" value="luce"> Luce
+            		</div>
+
+            		<div class="col-xs-3 col-sm-3 col-md-2 text-left">
+						<input type="radio" ng-model="privati3.tipoRisparmio" value="gas"> Gas
+            		</div>
+
+            	</div>
+
+
+
+            	<!-- privacy -->
+            	<div class="row rowMargin">
+            		<div class="col-xs-7 col-xs-offset-0 col-sm-7 col-sm-offset-1 col-md-4 col-md-offset-4">
+            			<div class="checkbox">
+                    		<label><input type="checkbox" nvalue="true" ng-model="privati3.privacy" required>Privacy - <a target="_blank" href="#/privacy">Leggi tutto</a></label>
+                    		<span ng-show="!privati3.privacy && formCompilati" class="label label-warning labelShowHide"> Devi accetare </span>
+                		</div>
+            		</div>
+
+            		<!-- Button Send -->
+	                <div class="col-xs-5 col-sm-4 col-md-3">
+	                  <button type="button" class="btn btn-sharp" ng-click="richiama()">AVANTI</button>
+	                </div>
+
+            	</div>
+
+            </form>
+
+            <!-- Msg dopo envio -->
+            <div class="row text-center" ng-show="!showForm">
+            	<div class="col-xs-6 col-xs-offset-3 risparmiaMsgForm">
+            		<p>{{msgRichiama}}</p>
+            	</div>
+            </div>
+
+
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div class="row risparmiaMargin testoPromo" ng-controller="Anteprima"> <!-- Icone promo -->
+		<div affidabile carousel="mostraA" next="next()" preview="preview()"></div>
+	</div>
+
+
+
+</div>

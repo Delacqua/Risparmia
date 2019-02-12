@@ -1,0 +1,73 @@
+<div ng-class="vetrina ? 'panel panel-primary' : 'panel panel-success'" ng-init="minimoD = 50">
+<!--div ng-if="vetrina">Vetrina</div-->
+
+    <div class="panel-heading"> <!-- Titulo-->
+      <div>{{ azienda.nome }} - {{ azienda.prodotto }}</div>
+    </div>
+    
+    <div class="panel-body" ng-init="minimoR = 10">
+      
+      <div class="row">
+        
+        <div class="hidden-xs col-sm-3 col-md-2 text-center"><!-- logo-->
+          <img alt="Logo {{azienda.nome}}" ng-src="{{azienda.logo}}">
+        </div>
+
+        <!--div class="clearfix visible-xs-block"></div-->
+
+        <div class="col-xs-4 col-sm-3 col-md-4"><!-- Descricao-->
+          <ul ng-repeat="(ind, serv) in azienda.serviziE">
+            <li><span>{{serv}}</span></li>
+          </ul>
+          <ul class="hidden-xs" id="fatturazione"> Fatturazione: <span ng-repeat="fat in azienda.fatturazioneE">{{fat + ", "}}</span></ul>
+        </div>
+
+        <!--div class="clearfix visible-xs-block"></div-->
+
+        <div class="col-xs-4 col-sm-3 col-md-3 text-center"><!-- Prezzo-->
+          <div ng-class="{ destaque:risparmia() < minimoD }" >
+            <h2>{{azienda.totale | number: 2}}</h2>
+            <span id="nota">€/anno</span>
+          </div>
+        </div>
+
+        <!--div class="clearfix visible-xs-block"></div-->
+
+        <div class="col-xs-4 col-sm-3 col-md-3"> <!-- Chiama-->
+            <button type="button" class="btn btn-sharp colorBlue pull-right" id="btDestaque">Cambia Adesso</button>
+            
+            <div class="pull-right" ng-class="{ destaque:risparmia() < minimoD }" >
+                <div id="destaque" ng-show="risparmia() > minimoR">
+                  <span>Risparmia:</span><h3>€ {{risparmia() | number:2 }} </h3>
+                </div>
+            </div>
+            
+        </div>
+
+      </div>
+
+    </div>
+
+    <div ng-class="{ destaque:risparmia() < minimoD }" >
+    <!-- Leggi tuddo - Expand -->
+
+        <details>
+          <summary class="text-center"> Leggi tutto </summary>
+
+            <table class="table table-bordered tableExpand">
+              <tr>
+                <th>Voce</th>
+                <th>Costo</th>
+              </tr>
+
+              <tr ng-repeat="prezzo in azienda.prezzoE">
+                <td> {{prezzo.key}} </td> 
+                <td> {{prezzo.val | number:2}} </td>
+              </tr>
+            </table>
+
+        </details>
+
+    </div>
+
+</div>                      

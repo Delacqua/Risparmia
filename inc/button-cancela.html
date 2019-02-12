@@ -1,0 +1,16 @@
+<div ng-init="buttonCancela=false">
+	
+	<div>
+		<a ng-show="!buttonCancela" ng-click="buttonCancela = true" class="btn btn-warning btn-block">{{nome}}</a>
+	</div>
+
+	<div class="btn-group btn-group-justified" role="group">
+		<a ng-show="buttonCancela" ng-click="buttonCancela = false" class="btn btn-warning btn-block">
+			<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+		</a>
+		<a ng-show="buttonCancela" ng-click="button()" class="btn btn-danger btn-block">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+		</a>
+	</div>
+	
+</div>

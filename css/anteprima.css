@@ -1,0 +1,113 @@
+.anteprima {
+	margin-top: 3em;
+	margin-bottom: 10em;
+}
+
+.anteprima1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.titolo {
+	margin-bottom: 5em;
+}
+
+.titolo h1{
+ 	color: #ea650a;
+	font-size: 2em;
+	display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.titolo h2{
+ 	color: #ea650a;
+	font-size: 2em;
+	margin-top: -5px;
+	display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.luce3 {
+	height: 50px;
+	margin-top: 1em;
+	margin-bottom: 3em;
+}
+
+.luce3:first-child {
+	margin-top: 2em;
+}
+
+.luce3 img{
+	margin-right: 1em;
+	margin-top: -0.1em;
+}
+
+.luce3 em{
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+.luce3 p{
+	font-size: 1em;
+	margin: 0;
+	margin-top: 0em;
+}
+
+.fundoIva {
+	position: relative;
+	background-color: #d9d9d9;
+	width: 320px;
+	height: 300px;
+	margin: auto; 
+}
+
+.luceIva {
+	position: relative;
+	margin: auto;
+	top: 10%;
+}
+
+.luceIva img {
+	padding-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.luceIva em {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #6661b9;
+}
+
+.luceIva p {
+	font-size: 1.2em;
+}
+
+.luceConfronta img{
+	margin-right: 2em;
+}
+
+.luceConfronta button{
+	width: 300px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.testoGenerale {
+	margin-top: 6em;
+	margin-bottom: 4em;
+}
+
+.testoGenerale h3{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #ea650a;
+	margin-bottom: 3em;
+}
+
+.testoGenerale p{
+	line-height: 2em;
+	text-align: justify;
+}

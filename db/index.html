@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    
+    <title>Entrata Database</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <!-- BootStrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!--CSS -->
+    <link rel="stylesheet" href="../css/db.css">
+    <link rel="stylesheet" href="../css/dbgas.css">
+    <link rel="stylesheet" href="../css/utenti.css">
+
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-sanitize.js"></script>
+    <script src="../js/db/blueAppDB.js"></script>
+    <script src="../js/blueAppUrls.js"></script>
+    <script src="../js/db/serviceDB.js"></script>
+    <script src="../js/db/Login.js"></script>
+    <script src="../js/db/AziendeLuceDB.js"></script>
+    <script src="../js/db/AziendeGasDB.js"></script>
+    <script src="../js/db/AggiornaDataLuce.js"></script>
+    <script src="../js/db/AggiornaDataGas.js"></script>
+    <script src="../js/db/LuceDB.js"></script>
+    <script src="../js/db/Imposte.js"></script>
+    <script src="../js/db/UtentiDB.js"></script>
+    <script src="../js/db/PrivatiDB.js"></script>
+    <script src="../js/db/IvaDB.js"></script>
+    <script src="../js/db/diretivaDB.js"></script>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+</head>
+  <body ng-app="blueAppDB">
+
+      <div class="container">
+
+          <div class="row">
+          <h1> Risparmia Facile</h1>
+          </div>
+
+          <div class="row downSpace">
+            <a type="button" class="btn btn-default" href="#">Iniziale</a>
+
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Aziende Luce <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#/aluce/1">Privati</a></li>
+                    <li><a href="#/aluce/3">Privati Pubblicita</a></li>
+                    <li><a href="#/aluce/2">Iva</a></li>
+                    <li><a href="#/aluce/4">Iva Pubblicita</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Aziende Gas <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#/agas/1">Privati</a></li>
+                    <li><a href="#/agas/3">Privati Pubblicita</a></li>
+                    <li><a href="#/agas/2">Iva</a></li>
+                    <li><a href="#/agas/4">Iva Pubblicita</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Visitatore <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#/utenti/1">Utenti Privati</a></li>
+                    <li><a href="#/utentiIva/2">Utenti IVA</a></li>
+                </ul>
+            </div>
+
+            <a type="button" class="btn btn-default" href="#/login">Login</a>
+          </div>
+
+          <ng-view></ng-view>
+
+      </div>               
+  </body>
+</html>
